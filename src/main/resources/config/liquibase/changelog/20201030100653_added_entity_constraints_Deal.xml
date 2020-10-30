@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Deal.
+    -->
+    <changeSet id="20201030100653-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"/>
+
+        <addForeignKeyConstraint baseColumnNames="deal_id"
+                                 baseTableName="deal_amount_of_goods"
+                                 constraintName="fk_deal_amount_of_goods_deal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="deal"/>
+
+        <addForeignKeyConstraint baseColumnNames="amount_of_goods_id"
+                                 baseTableName="deal_amount_of_goods"
+                                 constraintName="fk_deal_amount_of_goods_amount_of_goods_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="amount_of_goods"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity AmountOfGoods.
+    -->
+    <changeSet id="20201030100553-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="goods_id"
+                                 baseTableName="amount_of_goods"
+                                 constraintName="fk_amount_of_goods_goods_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="goods"/>
+
+    </changeSet>
+</databaseChangeLog>
